@@ -4,7 +4,7 @@
 
 ```
 wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.2/swagger-codegen-cli-2.4.2.jar
-wget https://github.com/darth10/asp-advanced-swagger-codegen/releases/download/1.0.1/AspAdvanced-swagger-codegen-1.0.0.jar
+wget https://github.com/darth10/asp-advanced-swagger-codegen/releases/download/1.0.2/asp-advanced-swagger-codegen-1.0.2.jar
 ```
 
 ## Building
@@ -17,7 +17,7 @@ mvn package
 
 ```
 java -Dmodels \
-    -cp target/asp-advanced-swagger-codegen-1.0.1.jar:swagger-codegen-cli-2.4.2.jar \
+    -cp asp-advanced-swagger-codegen-1.0.2.jar:swagger-codegen-cli-2.4.2.jar \
     io.swagger.codegen.SwaggerCodegen generate \
     -i swagger.yaml -o ./gen -l AspAdvanced
 ```
