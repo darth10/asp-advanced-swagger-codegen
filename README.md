@@ -16,3 +16,5 @@ java -Dmodels \
 ```
 
 On Windows, use `;` instead of `:` in the classpath (`-cp`) argument.
+Config files are also supported with the `-c` argument.
+Run the `config-help -l AspAdvanced` command for options.
