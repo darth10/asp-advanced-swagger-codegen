@@ -17,9 +17,9 @@ definitions:
   Order:
     type: "object"
     properties:
-      id:
-        type: "integer"
-        format: "int64"
+      orderId:
+        type: string
+        format: uuid
       petId:
         type: "integer"
         format: "int64"
@@ -30,6 +30,7 @@ definitions:
         type: "string"
         format: "date-time"
       status:
+        $ref: "#/definitions/OrderStatus"
         type: "string"
         description: "Order Status"
         enum:
@@ -117,6 +118,13 @@ definitions:
         $ref: "#/definitions/PetStatus"
     xml:
       name: "Pet"
+  OrderStatus:
+    type: string
+    description: "Order Status"
+    enum:
+      - PLACED
+      - APPROVED
+      - DELIVERED
   PetStatus:
     type: string
     enum:
