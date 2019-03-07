@@ -2,10 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.swagger</groupId>
-    <artifactId>AspAdvanced-swagger-codegen</artifactId>
+    <artifactId>asp-advanced-swagger-codegen</artifactId>
     <packaging>jar</packaging>
-    <name>AspAdvanced-swagger-codegen</name>
-    <version>1.0.0</version>
+    <name>asp-advanced-swagger-codegen</name>
+    <version>1.0.1</version>
     <build>
         <plugins>
             <plugin>
