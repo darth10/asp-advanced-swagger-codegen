@@ -5,7 +5,7 @@
     <artifactId>asp-advanced-swagger-codegen</artifactId>
     <packaging>jar</packaging>
     <name>asp-advanced-swagger-codegen</name>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <build>
         <plugins>
             <plugin>
