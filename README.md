@@ -7,12 +7,6 @@ wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.2/swagge
 wget https://github.com/darth10/asp-advanced-swagger-codegen/releases/download/1.0.3/asp-advanced-swagger-codegen-1.0.3.jar
 ```
 
-## Building
-
-```
-mvn package
-```
-
 ## Usage
 
 ```
@@ -33,4 +27,11 @@ For building only the models, use the following package references.
   <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
   <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
 </ItemGroup>
+```
+
+## Contributing
+
+To build the package, run the following command.
+```
+mvn package
 ```
