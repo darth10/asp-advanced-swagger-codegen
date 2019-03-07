@@ -1,5 +1,12 @@
 # Advanced AspNetCore Swagger Codegen library
 
+## Installation
+
+```
+wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.2/swagger-codegen-cli-2.4.2.jar
+wget https://github.com/darth10/asp-advanced-swagger-codegen/releases/download/1.0.0/AspAdvanced-swagger-codegen-1.0.0.jar
+```
+
 ## Building
 
 ```
