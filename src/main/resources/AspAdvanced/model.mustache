@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 {{#models}}
 {{#model}}
-namespace {{packageName}}.Models
+namespace {{packageName}}.Model
 { {{#isEnum}}{{>enumClass}}{{/isEnum}}{{^isEnum}}
     /// <summary>
     /// {{description}}

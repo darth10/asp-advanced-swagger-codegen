@@ -106,7 +106,7 @@ public class AspAdvancedGenerator extends AbstractCSharpCodegen {
         additionalProperties.put("dockerTag", this.packageName.toLowerCase());
 
         apiPackage = packageName + ".Controllers";
-        modelPackage = packageName + ".Models";
+        modelPackage = packageName + ".Model";
 
         String packageFolder = sourceFolder + File.separator + packageName;
 
@@ -162,7 +162,7 @@ public class AspAdvancedGenerator extends AbstractCSharpCodegen {
 
     @Override
     public String modelFileFolder() {
-        return outputFolder + File.separator + sourceFolder + File.separator + packageName + File.separator  + "Models";
+        return outputFolder + File.separator + sourceFolder + File.separator + packageName + File.separator  + "Model";
     }
 
 
