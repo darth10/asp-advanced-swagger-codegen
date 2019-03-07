@@ -6,7 +6,6 @@ using System.Collections.ObjectModel;
 using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -86,17 +85,12 @@ namespace {{packageName}}.Model
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return {{#vars}}{{#isNotContainer}}
+            return {{#vars}}
                 (
                     {{name}} == other.{{name}} ||
                     {{name}} != null &&
                     {{name}}.Equals(other.{{name}})
-                ){{#hasMore}} && {{/hasMore}}{{/isNotContainer}}{{^isNotContainer}}
-                (
-                    {{name}} == other.{{name}} ||
-                    {{name}} != null &&
-                    {{name}}.SequenceEqual(other.{{name}})
-                ){{#hasMore}} && {{/hasMore}}{{/isNotContainer}}{{/vars}}{{^vars}}false{{/vars}};
+                ){{#hasMore}} && {{/hasMore}}{{/vars}}{{^vars}}false{{/vars}};
         }
 
         /// <summary>
