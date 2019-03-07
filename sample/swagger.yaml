@@ -31,12 +31,6 @@ definitions:
         format: "date-time"
       status:
         $ref: "#/definitions/OrderStatus"
-        type: "string"
-        description: "Order Status"
-        enum:
-        - "placed"
-        - "approved"
-        - "delivered"
       complete:
         type: "boolean"
         default: false
