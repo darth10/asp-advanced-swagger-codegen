@@ -85,33 +85,13 @@ namespace {{packageName}}.Model
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return {{#vars}}
-                (
-                    {{name}} == other.{{name}} ||
-                    {{name}} != null &&
-                    {{name}}.Equals(other.{{name}})
-                ){{#hasMore}} && {{/hasMore}}{{/vars}}{{^vars}}false{{/vars}};
+            bool isEqual = {{#vars}}{{#-first}}true{{/-first}}{{/vars}}{{^vars}}false{{/vars}};
+{{#vars}}
+            isEqual &= {{name}} == other.{{name}} || {{name}} != null && {{name}}.Equals(other.{{name}});
+{{/vars}}
+            return isEqual;
         }
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                {{#vars}}
-                    if ({{name}} != null)
-                    hashCode = hashCode * 59 + {{name}}.GetHashCode();
-                {{/vars}}
-                return hashCode;
-            }
-        }
-
-        #region Operators
         #pragma warning disable 1591
 
         public static bool operator ==({{classname}} left, {{classname}} right)
@@ -125,7 +105,6 @@ namespace {{packageName}}.Model
         }
 
         #pragma warning restore 1591
-        #endregion Operators
     }
 {{/isEnum}}
 {{/model}}
