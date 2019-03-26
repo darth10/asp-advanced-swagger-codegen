@@ -12,14 +12,14 @@ using System.Text;
 {{#models}}
 {{#model}}
 namespace {{packageName}}.Model
-{ {{#isEnum}}{{>enumClass}}{{/isEnum}}{{^isEnum}}
-    /// <summary>
-    /// {{description}}
+{
+{{#isEnum}}{{>enumClass}}{{/isEnum}}{{^isEnum}}    /// <summary>
+    /// {{^description}}{{{classname}}}{{/description}}{{#description}}{{{description}}}{{/description}}
     /// </summary>
     [DataContract]
     public partial class {{classname}} : {{#parent}}{{{parent}}}, {{/parent}}IEquatable<{{classname}}>
-    { {{#vars}}{{#items.isEnum}}{{#items}}{{>enumClass}}{{/items}}{{/items.isEnum}}
-        /// <summary>
+    {
+{{#vars}}{{#items.isEnum}}{{#items}}{{>enumClass}}{{/items}}{{/items.isEnum}}        /// <summary>
         /// {{^description}}Gets or Sets {{{name}}}{{/description}}{{#description}}{{description}}{{/description}}
         /// </summary>
         {{#description}}
@@ -36,6 +36,7 @@ namespace {{packageName}}.Model
         public {{{datatype}}} {{name}} { get; {{#isReadOnly}}private {{/isReadOnly}}set; }
         {{/isEnum}}
         {{#hasMore}}
+
         {{/hasMore}}
         {{/vars}}
 
@@ -75,7 +76,7 @@ namespace {{packageName}}.Model
             return obj.GetType() == GetType() && Equals(({{classname}})obj);
         }
 
-        #pragma warning disable CS0472
+#pragma warning disable 0472
 
         /// <summary>
         /// Returns true if {{classname}} instances are equal
@@ -112,8 +113,8 @@ namespace {{packageName}}.Model
             return hashCode;
         }
 
-        #pragma warning restore CS0472
-        #pragma warning disable 1591
+#pragma warning restore 0472
+#pragma warning disable 1591
 
         public static bool operator ==({{classname}} left, {{classname}} right)
         {
@@ -125,7 +126,7 @@ namespace {{packageName}}.Model
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
     }
 {{/isEnum}}
 {{/model}}
