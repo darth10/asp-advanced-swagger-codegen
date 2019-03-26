@@ -30,7 +30,7 @@ namespace {{packageName}}.Model
         {{/required}}
         [DataMember(Name="{{baseName}}")]
         {{#isEnum}}
-        public {{{datatypeWithEnum}}}{{#isEnum}}{{^isContainer}}?{{/isContainer}}{{/isEnum}} {{name}} { get; set; }
+        public {{{datatypeWithEnum}}}{{#isEnum}}{{^isContainer}}{{^required}}?{{/required}}{{/isContainer}}{{/isEnum}} {{name}} { get; set; }
         {{/isEnum}}
         {{^isEnum}}
         public {{{datatype}}} {{name}} { get; {{#isReadOnly}}private {{/isReadOnly}}set; }
@@ -75,6 +75,8 @@ namespace {{packageName}}.Model
             return obj.GetType() == GetType() && Equals(({{classname}})obj);
         }
 
+        #pragma warning disable CS0472
+
         /// <summary>
         /// Returns true if {{classname}} instances are equal
         /// </summary>
@@ -110,6 +112,7 @@ namespace {{packageName}}.Model
             return hashCode;
         }
 
+        #pragma warning restore CS0472
         #pragma warning disable 1591
 
         public static bool operator ==({{classname}} left, {{classname}} right)

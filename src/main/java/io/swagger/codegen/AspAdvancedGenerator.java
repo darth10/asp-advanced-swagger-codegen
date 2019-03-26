@@ -227,6 +227,35 @@ public class AspAdvancedGenerator extends AbstractCSharpCodegen {
     }
 
     @Override
+    public String getTypeDeclaration(Property p) {
+        String swaggerType = getSwaggerType(p);
+
+        if (p instanceof ArrayProperty) {
+            return getArrayTypeDeclaration((ArrayProperty) p);
+        } else if (p instanceof MapProperty) {
+            MapProperty mp = (MapProperty) p;
+            Property inner = mp.getAdditionalProperties();
+
+            return swaggerType + "<String, " + getTypeDeclaration(inner) + ">";
+        }
+
+        if (p.getRequired()) {
+            swaggerType =  swaggerType.replaceAll("\\?", "");
+            return swaggerType;
+        }
+        return super.getTypeDeclaration(p);
+    }
+
+    private String getArrayTypeDeclaration(ArrayProperty arr) {
+        String arrayType = typeMapping.get("array");
+        StringBuilder instantiationType = new StringBuilder(arrayType);
+        Property items = arr.getItems();
+        String nestedType = getTypeDeclaration(items);
+        instantiationType.append("<").append(nestedType).append(">");
+        return instantiationType.toString();
+    }
+
+    @Override
     public String toEnumName(CodegenProperty property) {
         return sanitizeName(camelize(property.name));
     }
