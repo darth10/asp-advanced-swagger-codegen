@@ -92,6 +92,8 @@ definitions:
     required:
     - "name"
     - "photoUrls"
+    - "isAdult"
+    - "status"
     properties:
       id:
         type: "integer"
@@ -101,6 +103,10 @@ definitions:
       name:
         type: "string"
         example: "doggie"
+      isTagged:
+        type: "boolean"
+      isAdult:
+        type: "boolean"
       photoUrls:
         type: "array"
         xml:
@@ -115,10 +121,23 @@ definitions:
           wrapped: true
         items:
           $ref: "#/definitions/Tag"
+      messages:
+        type: object
+        additionalProperties:
+          $ref: "#/definitions/Message"
       status:
+        $ref: "#/definitions/PetStatus"
+      previousStatus:
         $ref: "#/definitions/PetStatus"
     xml:
       name: "Pet"
+  Message:
+    type: object
+    properties:
+      code:
+        type: integer
+        text:
+          type: string
   OrderStatus:
     type: string
     description: "Order Status"
