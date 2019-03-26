@@ -236,7 +236,7 @@ public class AspAdvancedGenerator extends AbstractCSharpCodegen {
             MapProperty mp = (MapProperty) p;
             Property inner = mp.getAdditionalProperties();
 
-            return swaggerType + "<String, " + getTypeDeclaration(inner) + ">";
+            return swaggerType + "<string, " + getTypeDeclaration(inner) + ">";
         }
 
         if (p.getRequired()) {
