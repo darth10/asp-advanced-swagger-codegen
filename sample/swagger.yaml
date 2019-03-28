@@ -57,6 +57,7 @@ definitions:
         type: "string"
       email:
         type: "string"
+        readOnly: true
       password:
         type: "string"
       phone:
