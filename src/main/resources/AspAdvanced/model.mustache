@@ -33,7 +33,7 @@ namespace {{packageName}}.Model
         public {{{datatypeWithEnum}}}{{#isEnum}}{{^isContainer}}{{^required}}?{{/required}}{{/isContainer}}{{/isEnum}} {{name}} { get; set; }
         {{/isEnum}}
         {{^isEnum}}
-        public {{{datatype}}} {{name}} { get; {{#isReadOnly}}private {{/isReadOnly}}set; }
+        public {{{datatype}}} {{name}} { get; set; }
         {{/isEnum}}
         {{#hasMore}}
 
