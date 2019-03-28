@@ -4,14 +4,14 @@
 
 ```
 wget http://central.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.5/swagger-codegen-cli-3.0.5.jar
-wget https://github.com/darth10/asp-advanced-swagger-codegen/releases/download/1.0.7/asp-advanced-swagger-codegen-1.0.7.jar
+wget https://github.com/darth10/asp-advanced-swagger-codegen/releases/download/1.0.8/asp-advanced-swagger-codegen-1.0.8.jar
 ```
 
 ## Usage
 
 ```
 java -Dmodels \
-    -cp asp-advanced-swagger-codegen-1.0.7.jar:swagger-codegen-cli-3.0.5.jar \
+    -cp asp-advanced-swagger-codegen-1.0.8.jar:swagger-codegen-cli-3.0.5.jar \
     io.swagger.codegen.Codegen generate \
     -i swagger.yaml -o ./gen -l AspAdvanced
 ```
