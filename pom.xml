@@ -127,7 +127,7 @@
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <swagger-codegen-version>2.4.2</swagger-codegen-version>
+        <swagger-codegen-version>2.4.19</swagger-codegen-version>
         <maven-plugin-version>1.0.0</maven-plugin-version>
         <jmustache-version>1.14</jmustache-version>
         <junit-version>4.8.1</junit-version>
